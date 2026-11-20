@@ -234,10 +234,33 @@ nav a[aria-current="page"] { color: #222; font-weight: 600; }
 .section h2 { font-size: 1.5rem; }
 .button { background: #fff; color: var(--text); border-color: #bdbdbd; border-radius: 0; font-weight: 400; }
 .button:hover { background: #f5f5f5; border-color: #555; }
-.cards { gap: 12px 36px; }
-.card { padding: 28px 0; border: 0; border-top: 1px solid var(--border); border-radius: 0; }
+.cards { gap: 20px; }
+.card {
+  padding: 26px;
+  border: 1px solid #d8dddd;
+  border-radius: 6px;
+  background: #fafbfb;
+}
 .card h3 { font-size: 1.1rem; }
-.page-card:hover { background: #fff; border-color: #777; }
+.page-card:hover,
+.page-card:focus-visible {
+  background: #f0f4f4;
+  border-color: #8b9999;
+}
+.page-card h2,
+.page-card h3 {
+  text-decoration: underline;
+  text-decoration-color: #b8c2c2;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+.page-card:hover h2,
+.page-card:hover h3,
+.page-card:focus-visible h2,
+.page-card:focus-visible h3 {
+  text-decoration-color: currentColor;
+}
+.page-card:active { background: #e8eeee; }
 .profile-layout { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
 /* プロフィール写真：横幅に合わせて正方形で表示 */
 .photo-placeholder, .profile-photo {
