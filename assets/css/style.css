@@ -334,3 +334,43 @@ nav a,
 nav a[aria-current="page"] { font-weight: 400; }
 .nav-subgroup a { font-family: var(--font-english); }
 .hero-page h1 { font-size: clamp(2.25rem, 4vw, 3rem); }
+
+/* 写真は縦横比を保ち、作品全体を表示 */
+.gallery-populated { display: block; columns: 3; column-gap: 10px; }
+.gallery-populated .gallery-item { break-inside: avoid; margin-bottom: 10px; }
+.gallery-populated .gallery-item img { width: 100%; height: auto; aspect-ratio: auto; }
+.gallery-item:focus-visible { outline-offset: 2px; }
+.site-logo { display: block; width: 100%; max-width: 190px; height: auto; }
+.header-inner .logo { display: block; width: 100%; padding: 0; }
+@media (max-width: 800px) {
+  .site-logo { max-width: 100px; }
+  .gallery-populated { columns: 2; }
+}
+@media (max-width: 480px) {
+  .gallery-populated { columns: 1; }
+}
+
+/* Games：ゲームごとの節 */
+.game-category + .game-category { margin-top: 56px; }
+.game-category h2 {
+  margin: 0 0 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-english);
+  font-weight: 400;
+}
+
+/* LIV：縦長の写真を小さめに並べる */
+.game-category-compact .gallery-populated {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 660px;
+  gap: 16px;
+}
+.game-category-compact .gallery-item { margin-bottom: 0; }
+@media (max-width: 480px) {
+  .game-category-compact .gallery-populated {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
